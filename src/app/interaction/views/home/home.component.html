@@ -1,34 +1,15 @@
-<p>hola mundo</p>
-<!--<div *ngFor="let news of newsAngular">
-    <p>{{news.title}}</p>
-</div>-->
-
-
-<!--<table>
-          <thead class="table-dark">
-            <tr>
-              <th>Id</th>
-              <th>title</th>
-              <th>author</th>
-              <th>url</th>
-            </tr>
-          </thead>
-  
-          <tbody class="aling-middle">
-            <tr *ngFor="let nuevos of newsAngular">
-              <td>{{ nuevos.created_at }}</td>
-              <td>{{ nuevos.title }}</td>
-              <td>{{ nuevos.author }}</td>
-              <td>{{ nuevos.url }}</td>
-            </tr>
-        </tbody>
-</table>-->
-
-<div *ngFor="let nuevos of newsAngular" class="front">
-  <div>
-    {{nuevos.created_at}}
+<section class="container"> 
+  <div *ngFor="let nuevos of newsAngular | paginate: {itemsPerPage: 8, currentPage: page} " class="front">
+    <div>
+      <li>icon clock</li>
+      <div>{{nuevos.created_at}}</div>
+    </div>
+    <div>
+      {{nuevos.story_title}}
+    </div>
+    <div>
+      <li>icon heart</li> 
+    </div>
   </div>
-  <div>
-    {{nuevos.story_title}}
-  </div>
-</div>
+</section>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
