@@ -23,5 +23,18 @@ export class HomeComponent implements OnInit {
   }
 
 }
-const hora: any =  Date.parse("2021-09-18T01:58:47.000Z");
-console.log(hora)
+let newsAngular = ([] as any);
+console.log(newsAngular)
+
+const calHour: any = function(millisec: any){
+  
+  const nuevo: any = new Date(millisec);
+  const noNuevo: any = nuevo.getHours();
+
+  return noNuevo
+}
+
+console.log(calHour('2021-09-18T23:33:57.000Z')) 
+/*calHour('2021-09-18T23:45:07.000Z')
+calHour('2021-09-18T22:44:36.000Z')
+calHour('2021-09-18T10:39:11.000Z') */
