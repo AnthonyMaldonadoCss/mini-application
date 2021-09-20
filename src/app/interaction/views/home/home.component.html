@@ -1,15 +1,26 @@
+<app-nav-bar></app-nav-bar>
+
 <section class="container"> 
   <div *ngFor="let nuevos of newsAngular | paginate: {itemsPerPage: 8, currentPage: page} " class="front">
-    <div>
-      <li>icon clock</li>
-      <div>{{nuevos.created_at}}</div>
+    <div class="front__inside">
+      <div class="time"> 
+        <ion-icon id="time" name="time-outline"></ion-icon>
+        <div>{{nuevos.created_at}}</div>
+        <div>
+         <p> {{nuevos.story_title}}</p>
+        </div>
+      </div>
+      
+      <div class="heart__container">
+        
+        <ion-icon id="heart" name="heart-outline"></ion-icon>
+      </div>
     </div>
-    <div>
-      {{nuevos.story_title}}
-    </div>
-    <div>
-      <li>icon heart</li> 
-    </div>
+    
   </div>
+  
 </section>
-<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<section class="pagination">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</section>
+
