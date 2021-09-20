@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f8f8f8;
+}
+.navBar__container{
+    color: black;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px  10%;
+   box-shadow: 0px 2px 2.5px 0px rgba(0,0,0,0.50);
+   margin-bottom:20px;
+}
+.nav__links{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 120%;
+}
